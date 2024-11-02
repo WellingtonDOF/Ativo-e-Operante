@@ -16,7 +16,6 @@ Ao logar o sistema verifica qual o nível do usuário e redireciona-o de acordo 
 
 Todos os dados cadastrados são persistidos no banco de dados.
 
-----
 
 ## Tecnologias utilizadas
 
