@@ -19,7 +19,7 @@ Todos os dados cadastrados são persistidos no banco de dados.
 
 ## Tecnologias utilizadas
 
--Java
+- Java
 - SpringBoot
 - JavaScript
 - Html
