@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .error-container {
+            text-align: center;
+        }
+        .error-code {
+            font-size: 72px;
+            color: #dc3545; /* Red color */
+            margin-bottom: 10px;
+        }
+        .error-message {
+            font-size: 24px;
+            color: #333;
+        }
+        .redirect-message {
+            font-size: 18px;
+            color: #333;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <div class="error-code">403</div>
+        <div class="error-message">Acesso Negado</div>
+        <div class="redirect-message">Você será redirecionado em <span id="countdown">5</span> segundos...</div>
+    </div>
+
+    <script>
+        // Função para atualizar a contagem regressiva
+        function countdown() {
+            var seconds = 5; // Defina o tempo total em segundos
+            var countdownElement = document.getElementById('countdown');
+
+            var countdownInterval = setInterval(function() {
+                seconds--;
+                countdownElement.textContent = seconds;
+
+                if (seconds <= 0) {
+                    clearInterval(countdownInterval);
+                    window.location.href = 'index.html'; // Redireciona para a URL desejada
+                }
+            }, 1000); // Atualiza a cada segundo
+        }
+        // Bloquear navegação
+        window.history.pushState(null, null, window.location.href);
+        window.onpopstate = function(event) {
+            window.history.go(1);
+        };
+
+// Para desbloquear a navegação quando necessário:
+// window.onpopstate = null;
+
+        // Inicia a contagem regressiva quando a página é carregada
+        window.onload = function() {
+            countdown();
+        };
+    </script>
+</body>
+</html>

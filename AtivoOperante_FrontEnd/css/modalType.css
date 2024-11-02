@@ -1,0 +1,66 @@
+/* Estilos para o modal */
+.modal {
+  display: none; /* Inicia oculto */
+  position: fixed; /* Posição fixa */
+  z-index: 1; /* Fica sobre todos os outros elementos */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4); /* Fundo escuro translúcido */
+}
+
+/* Conteúdo do modal */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 10px;
+  border: 1px solid #888;
+  width: 23%;
+  border-radius: 10px; /* Borda arredondada */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* Sombra */
+  display: flex; /* Altera o layout para flexível */
+  justify-content: space-between; /* Alinha os elementos um ao lado do outro */
+  align-items: center; /* Centraliza verticalmente */
+}
+
+/* Estilo para o botão de fechar */
+.fechar {
+  color: #aaa;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.fechar:hover,
+.fechar:focus {
+  color: black;
+  text-decoration: none;
+}
+
+/* Estilo para o textarea */
+textarea {
+  width: calc(100% - 30px); /* Largura ajustada para os botões */
+  height: 100px;
+  padding: 10px;
+  box-sizing: border-box; /* Inclui padding e borda na largura */
+  margin-bottom: 10px;
+  border: 1px solid #ccc; /* Borda suave */
+  border-radius: 5px; /* Borda arredondada */
+  resize: none; /* Permite redimensionamento vertical */
+}
+
+/* Estilo para os botões */
+button {
+  background-color: #007bff; /* Cor de fundo azul */
+  color: white; /* Cor do texto branco */
+  padding: 8px 16px; /* Espaçamento interno menor */
+  border: none; /* Sem borda */
+  border-radius: 5px; /* Borda arredondada */
+  cursor: pointer; /* Cursor ao passar */
+  transition: background-color 0.3s; /* Transição suave de cor de fundo */
+}
+
+button:hover {
+  background-color: #0056b3; /* Cor de fundo azul escuro ao passar */
+}

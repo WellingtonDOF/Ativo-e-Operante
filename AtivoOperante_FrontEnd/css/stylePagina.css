@@ -1,0 +1,368 @@
+/* Importando a fonte Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+#headerAdmin {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 35px;
+}
+#headerAdmin .main-nav,
+#headerAdmin .menu-toggle {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: #023047;
+    background-color: #f8f6f6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.main-header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: #023047;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo img {
+    max-width: 120px;
+}
+
+.main-nav {
+    flex-grow: 1;
+}
+
+.main-nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+.main-nav ul li {
+    margin: 0 15px;
+    position: relative; /* Necessário para o submenu */
+}
+
+.main-nav ul li a {
+    color: #023047;
+    text-decoration: none;
+    padding: 10px;
+    transition: color 0.3s ease;
+    font-weight: 500;
+}
+
+.main-nav ul li a:hover {
+    color: #3a25f7;
+}
+
+.menu-toggle {
+    display: none;
+    align-items: center;
+    position: relative;
+}
+
+.toggle-btn {
+    cursor: pointer;
+    display: inline-block;
+    width: 35px;
+    height: 30px;
+    position: relative;
+}
+
+.toggle-btn span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: #023047;
+    border-radius: 3px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.toggle-btn span:nth-child(1) {
+    top: 0;
+}
+
+.toggle-btn span:nth-child(2), .toggle-btn span:nth-child(3) {
+    top: 10px;
+}
+
+.toggle-btn span:nth-child(3) {
+    top: 20px;
+}
+
+#toggle {
+    display: none;
+}
+
+.menu {
+    position: absolute;
+    z-index: 1; /* Fica sobre todos os outros elementos */
+    top: 100%;
+    right: 0;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 150px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.menu ul {
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px;
+    display: block;
+}
+
+.menu a:hover {
+    background-color: #f0f0f0;
+}
+
+.menu {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s;
+}
+
+#toggle:checked + .menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+
+
+.menu-toggle:hover .menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.menu ul li:last-child {
+    border-bottom: none;
+}
+
+.menu ul li a {
+    color: #023047;
+    text-decoration: none;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.menu ul li a:hover {
+    color: #3a25f7;
+}
+
+
+/* CSS Adicional para o Submenu */
+
+
+.main-nav .submenu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px); /* Ajuste para o submenu ficar abaixo do item pai */
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+    z-index: 10;
+    padding: 10px 0;
+    border-radius: 4px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    transform: translateY(-10px); /* Ajuste para o efeito de transição */
+}
+.main-nav ul li {
+    margin: 0 15px; 
+    position: relative;
+}
+
+.main-nav ul li a {
+    color: #023047;
+    text-decoration: none;
+    padding: 10px;
+    transition: color 0.3s ease;
+    font-weight: 500;
+}
+
+.main-nav ul li a:hover {
+    color: #3a25f7;
+}
+
+.main-nav .submenu li {
+    border-bottom: 1px solid #ddd;
+}
+
+.main-nav .submenu li:last-child {
+    border-bottom: none;
+}
+
+.main-nav .submenu li a {
+    padding: 10px 20px;
+    display: block;
+    color: #023047;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.main-nav .submenu li a:hover {
+    background-color: #f0f0f0;
+    color: #3a25f7;
+}
+
+.has-submenu:hover .submenu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+
+@media (max-width: 990px) {
+    .main-nav ul {
+        display: none;
+    }
+    .menu-toggle {
+        display: flex;
+    }
+    #toggle:checked + .menu {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+}
+
+.main-footer {
+    background-color: #fff;
+    color: #023047;
+    padding: 20px 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-section {
+    flex: 1 1 200px;
+    margin: 10px;
+}
+
+.footer-section h3 {
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.footer-section p, .footer-section ul, .footer-section a {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #023047;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #023047;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #3a25f7;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.social-icons a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+}
+
+.social-icons img {
+    max-width: 100%;
+    height: auto;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 10px 20px;
+    border-top: 1px solid #ddd;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+@media (max-width: 830px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+}

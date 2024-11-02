@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Enviar Denúncia</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.5.6/css/ionicons.min.css">
+
+    <link rel="stylesheet" href="./css/userstyle.css">
+    <script src="./js/script.js"></script>
+    <script src="./js/security.js"></script>
+
+    <link rel="stylesheet" href="./css/stylePagina.css">
+    <script src="./js_user/carregaHeaderFooter.js"></script>
+</head>
+<body onload="verificaNivel(),carregaOrgaos(),carregaHeaderFooter()" class="page-content">
+  <!--
+  <div class="profile">
+    <h2>Usuário Logado</h2>
+    <div class="profile-info">
+        <div class="info-item">
+            <label for="name">Nome:</label>
+            <span id="name">João da Silva</span>
+        </div>
+        <div class="info-item">
+            <label for="email">E-mail:</label>
+            <span id="email">joao@example.com</span>
+        </div>
+        <div class="info-item">
+            <label for="cpf">CPF:</label>
+            <span id="cpf">123.456.789-00</span>
+        </div>
+    </div>
+</div>-->
+
+<div class="wrapper">
+    
+    <!-- CASO SEJA O USUARIO DESBLOQUEAR ESSE HEADER-->
+    <header id="headerUser" class="main-header">
+       
+    </header>
+
+    <main class="content">
+       <div >
+      <section class="ftco-section">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-md-12 d-flex justify-content-center">
+              <div class="btn-group">
+                <form id="formDenuncia">
+                  <div class="heading-title py-4 px-4">
+                    <h3 class="mb-0">Denúncia</h3>
+                  </div>
+                  <div id="orgaosDiv" class="px-4" style="background-color:#ffffff;">
+  
+                    <div class="form-group">
+                      <label for="exampleDropdownFullName">Nome da denúncia:</label>
+                      <input type="text" class="form-control" id="denName" name="denName" maxlength="39" placeholder="Digite o nome da denúncia" value="denTeste">
+                    </div>
+                  
+                    <div class="form-group"> 
+                      <label for="orgaoCompetente">Órgão competente:</label>
+                      <select id="orgaoCompetente" name="orgaoCompetente">
+                        <!--Aqui vai entrar os options formados em JS-->
+                      </select>
+                    </div>
+                    
+                    <div class="form-group">
+                      <label for="tipoProblema">Tipo problema:</label>
+                      <select id="tipoProblema" name="tipoProblema">
+                        <!--Aqui vai entrar os options formados em JS-->
+                      </select>
+                    </div>
+              
+                    <div class="form-group">
+                      <label for="urgency">Escolha a urgência:</label>
+                      <input type="number" id="denUrgency" name="denUrgency" class="form-control"  min="1" max="5" placeholder="1 a 5" value="5">
+                    </div>
+                  
+                    <div class="form-group">
+                      <textarea id="denText" name="denText" cols="30" rows="3" class="form-control" placeholder="Digite a denúncia"></textarea>
+                    </div>
+  
+  
+                    <div class="form-group">
+                      <label for="file_upload" class="custom-file-upload">
+                        <i class="fa fa-cloud-upload"></i> Escolher arquivo
+                      </label>
+                      <input id="file_upload" name="file_upload" type="file" style="display: none;" onchange="updateFileName(this)"/>
+                      <span id="file_name">Nenhum arquivo selecionado</span>
+                    </div>
+      
+                    <button type="submit" onclick="setDenuncia(event)" class="btn btn-primary">Enviar</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section> 
+    </div>
+    </main>
+
+    <footer class="main-footer" id="footerUser">
+       
+    </footer>
+</div>
+  
+    
+
+
+  <script src="js_user/jquery.min.js"></script>
+  <script src="js_user/popper.js"></script>
+  <script src="js_user/bootstrap.min.js"></script>
+  <script src="js_user/main.js"></script>    
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de usuário</title>
+    <link rel="stylesheet" href="./css/stylePagina.css">
+    <link rel="stylesheet" href="./css/userden.css">
+    <script src="./js_user/scriptdenuser.js"></script>
+    <script src="./js_user/scriptU.js"></script>
+    <script src="./js/security.js"></script>
+
+    <script src="./js_user/carregaHeaderFooterU.js"></script>
+
+</head>
+<body onload="tokenVerify(),carregaHeaderFooterU()">
+
+<div class="wrapper">
+    <!-- CASO SEJA O USUARIO DESBLOQUEAR ESSE HEADER-->
+    <header id="headerUser" class="main-header">
+       
+    </header>
+
+    <main class="content">
+        <div class="table-wrapper">
+            <div id="divConclusion" style="display: none;">
+                <p style="color: green;">Denúncia excluida com sucesso!</p>
+            </div>
+            <table>
+                <thead>
+                    <tr style="cursor: default;">
+                        <th>Título</th>
+                        <th>Texto</th>
+                        <th>Urgência</th>
+                        <th>Órgão</th>
+                        <th>Tipo de Problema</th>
+                        <th>Nome do Usuário</th>
+                        <th>Imagem</th>
+                        <th>Feedback</th>
+                    </tr>
+                </thead>
+                <tbody id="bodyTable">
+                                       
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer class="main-footer" id="footerUser">
+       
+    </footer>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+         //Esse carregaDenuncia atualiza o html de forma dinamica de acordo com o banco, e no final chama initializeFeedback_Modal, para fazer a ligação com os ouvintes
+         // SE NÃO FIZER ISSO DE CHAMAR NO FINAL APOS REALIZAR DE FORMA DINAMICA VAI DAR PROBLEMA NAS FUNÇÕES DE FEEDBACK E MODAL!!
+         carregaDenuncias();
+     });
+ 
+ </script>
+</body>
+</html>

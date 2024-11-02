@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Enviar</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.5.6/css/ionicons.min.css">
+    
+    <link rel="stylesheet" href="./css/userstyle.css">
+    <link rel="stylesheet" href="./css/userden.css">
+    <link rel="stylesheet" href="./css/stylePagina.css">
+    <link rel="stylesheet" href="./css/modalType.css">
+
+
+    <script src="./js/scriptTypeOrg.js"></script>
+    <script src="./js_user/carregaHeaderFooter.js"></script>
+    <script src="./js/scriptden.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/security.js"></script>
+
+
+</head>
+<body onload="verificaNivel(),carregaHeaderFooter()" class="">
+
+  <!--
+  <div class="profile">
+    <h2>Usuário Logado</h2>
+    <div class="profile-info">
+        <div class="info-item">
+            <label for="name">Nome:</label>
+            <span id="name">João da Silva</span>
+        </div>
+        <div class="info-item">
+            <label for="email">E-mail:</label>
+            <span id="email">joao@example.com</span>
+        </div>
+        <div class="info-item">
+            <label for="cpf">CPF:</label>
+            <span id="cpf">123.456.789-00</span>
+        </div>
+    </div>
+</div>-->
+
+<div class="wrapper">
+    <!-- CASO SEJA O USUARIO DESBLOQUEAR ESSE HEADER-->
+    <header id="headerUser" class="main-header">
+       
+    </header>
+
+    <main class="content">
+        <div>
+          <section class="ftco-section">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-md-12 d-flex justify-content-center">
+                  <div class="btn-group">
+                      <form id="formTipo">
+                          <div class="heading-title py-4 px-4">
+                              <h3 class="mb-0">Tipo problema</h3>
+                          </div>
+                          <div id="orgaosDiv" class="px-4" style="background-color:#ffffff;">
+                              <div class="form-group">
+                                  <label for="denTipo">Nome do tipo:</label>
+                                  <input type="text" class="form-control" id="denTipo" name="denTipo" maxlength="39" placeholder="Digite o tipo do problema" value="Enchente">
+                              </div>
+                              <button type="submit" onclick="setTipo(event)" class="btn btn-primary">Enviar</button>
+                          </div>
+                      </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section> 
+        </div>
+
+        <div id="meuModal" class="modal">
+          <div class="modal-content">
+            <textarea id="texto" placeholder="Digite o nome do tipo" maxlength="30"></textarea>
+            <div class="button-container">
+              <button onclick="enviarMudanca('T')">Enviar</button>
+              <button onclick="fecharModal()">Fechar</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="divTipo" style="display: none;">
+          <h3 style="color: red;">Impossivel excluir, tipo está em uma denuncia ativa.</h3>
+        </div>
+        <table>
+          <thead>
+              <tr style="cursor: default;">
+                  <th>Tipo de Problema</th>
+                  <th>Opção</th>                  
+              </tr>
+          </thead>
+          <tbody id="bodyTable">  
+
+          </tbody>
+      </table>
+    </main>
+
+    <footer class="main-footer" id="footerUser">
+       
+    </footer>
+</div>
+  
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+        //Esse carregaDenuncia atualiza o html de forma dinamica de acordo com o banco, e no final chama initializeFeedback_Modal, para fazer a ligação com os ouvintes
+        // SE NÃO FIZER ISSO DE CHAMAR NO FINAL APOS REALIZAR DE FORMA DINAMICA VAI DAR PROBLEMA NAS FUNÇÕES DE FEEDBACK E MODAL!!
+        carregaTipo();
+    });
+
+</script>
+
+<script src="js_user/jquery.min.js"></script>
+<script src="js_user/popper.js"></script>
+<script src="js_user/bootstrap.min.js"></script>
+<script src="js_user/main.js"></script>    
+</body>
+</html>
